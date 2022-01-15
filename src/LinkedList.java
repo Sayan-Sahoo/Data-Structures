@@ -15,8 +15,32 @@ public class LinkedList {
         }
     }
 
-    public static void insertAtAnyPosition(){
+    public static Node insertAtAnyPosition(Node list, int data, int pos){
+        Node head = list;
 
+        if(pos ==  1){
+            Node newnode = new Node(data);
+            newnode.next = list;
+            head = newnode;
+        }else{
+            while(pos-- != 0){
+                if(pos == 1){
+                    Node newnode = getNode(data);
+                    newnode.next = head.next;
+                    head.next = newnode;
+                    break;
+                }
+                head = head.next;
+            }
+            if (pos != 1){
+                System.out.println("Position out of range");
+            }
+        }
+        return head;
+    }
+
+    public static Node getNode(int data){
+        return new Node(data);
     }
 
     public static LinkedList insert(LinkedList list, int data){
