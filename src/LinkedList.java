@@ -15,6 +15,10 @@ public class LinkedList {
         }
     }
 
+    public static void insertAtAnyPosition(){
+
+    }
+
     public static LinkedList insert(LinkedList list, int data){
         Node newnode = new Node(data);
         newnode.next = null;
